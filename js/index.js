@@ -108,3 +108,7 @@ const siteKeys = Object.keys(siteContent.contact);
 contactText.forEach((p, index) => {
   p.textContent = siteContent.contact[`${siteKeys[index + 1]}`];
 });
+
+// Updated footer
+const footerText = document.querySelector("footer p");
+footerText.textContent = siteContent.footer.copyright;
