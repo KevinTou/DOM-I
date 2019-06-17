@@ -67,32 +67,28 @@ const mainContentHeading = document.querySelectorAll(".text-content h4");
 const mainContentText = document.querySelectorAll(".text-content p");
 
 for (let i = 0; i < 5; i++) {
-  let heading = "";
-  let text = "";
+  let section = "";
   switch (i) {
     case 0:
-      heading = "features-h4";
-      text = "features-content";
+      section = "features";
       break;
     case 1:
-      heading = "about-h4";
-      text = "about-content";
+      section = "about";
       break;
     case 2:
-      heading = "services-h4";
-      text = "services-content";
+      section = "services";
       break;
     case 3:
-      heading = "product-h4";
-      text = "product-content";
+      section = "product";
       break;
     case 4:
-      heading = "vision-h4";
-      text = "vision-content";
+      section = "vision";
       break;
   }
-  mainContentHeading[i].textContent = siteContent["main-content"][`${heading}`];
-  mainContentText[i].textContent = siteContent["main-content"][`${text}`];
+  mainContentHeading[i].textContent =
+    siteContent["main-content"][`${section}-h4`];
+  mainContentText[i].textContent =
+    siteContent["main-content"][`${section}-content`];
 }
 
 const mainContentImage = document.getElementById("middle-img");
