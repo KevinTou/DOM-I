@@ -53,6 +53,7 @@ navigation.forEach((a, index) => {
 });
 
 // Updated call-to-action
+// TODO: ADD LINEBREAK IN H1
 const ctaHeader = document.querySelector(".cta-text h1");
 ctaHeader.textContent = siteContent.cta.h1;
 
@@ -96,3 +97,14 @@ mainContentImage.setAttribute(
   "src",
   siteContent["main-content"]["middle-img-src"]
 );
+
+// Updated contact
+const contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = siteContent.contact["contact-h4"];
+
+// TODO: ADD LINEBREAK IN ADDRESS
+const contactText = document.querySelectorAll(".contact p");
+const siteKeys = Object.keys(siteContent.contact);
+contactText.forEach((p, index) => {
+  p.textContent = siteContent.contact[`${siteKeys[index + 1]}`];
+});
