@@ -120,7 +120,6 @@ navigation.forEach(a => {
 
 // Adding links to the navigation bar
 const nav = document.querySelector("nav");
-const navImage = document.querySelector("nav img");
 
 const newLink1 = document.createElement("a");
 newLink1.setAttribute("href", "#");
@@ -132,4 +131,16 @@ const newLink2 = document.createElement("a");
 newLink2.setAttribute("href", "#");
 newLink2.textContent = "Blog";
 newLink2.style.color = "Green";
-navImage.prependChild(newLink2);
+nav.appendChild(newLink2);
+
+// Stretch Goal
+let isClicked = 0;
+ctaButton.addEventListener("click", () => {
+  if (isClicked === 0) {
+    document.querySelector("body").style.backgroundColor = "slategrey";
+    isClicked++;
+  } else {
+    document.querySelector("body").style.backgroundColor = "white";
+    isClicked = 0;
+  }
+});
