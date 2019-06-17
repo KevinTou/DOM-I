@@ -55,7 +55,10 @@ navigation.forEach((a, index) => {
 // Updated call-to-action
 // TODO: ADD LINEBREAK IN H1
 const ctaHeader = document.querySelector(".cta-text h1");
-ctaHeader.textContent = siteContent.cta.h1;
+ctaHeader.textContent = siteContent.cta.h1
+  .replace(" ", "\r\n")
+  .replace(" A", "\r\nA");
+ctaHeader.style.whiteSpace = "pre-line";
 
 const ctaButton = document.querySelector(".cta-text button");
 ctaButton.textContent = siteContent.cta.button;
@@ -106,7 +109,12 @@ contactHeader.textContent = siteContent.contact["contact-h4"];
 const contactText = document.querySelectorAll(".contact p");
 const siteKeys = Object.keys(siteContent.contact);
 contactText.forEach((p, index) => {
-  p.textContent = siteContent.contact[`${siteKeys[index + 1]}`];
+  if (index === 0) {
+    p.textContent = siteContent.contact.address.replace(" S", "\r\nS");
+    p.style.whiteSpace = "pre-line";
+  } else {
+    p.textContent = siteContent.contact[`${siteKeys[index + 1]}`];
+  }
 });
 
 // Updated footer
