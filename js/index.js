@@ -112,3 +112,24 @@ contactText.forEach((p, index) => {
 // Updated footer
 const footerText = document.querySelector("footer p");
 footerText.textContent = siteContent.footer.copyright;
+
+// Changing the nagivation text to be Green
+navigation.forEach(a => {
+  a.style.color = "Green";
+});
+
+// Adding links to the navigation bar
+const nav = document.querySelector("nav");
+const navImage = document.querySelector("nav img");
+
+const newLink1 = document.createElement("a");
+newLink1.setAttribute("href", "#");
+newLink1.textContent = "Support";
+newLink1.style.color = "Green";
+nav.appendChild(newLink1);
+
+const newLink2 = document.createElement("a");
+newLink2.setAttribute("href", "#");
+newLink2.textContent = "Blog";
+newLink2.style.color = "Green";
+navImage.prependChild(newLink2);
